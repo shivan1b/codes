@@ -30,7 +30,10 @@ class Node{
                 }
 
 		Node *reverseList(Node *head){
-			Node *tmp;
+			Node *tmp,*hd=head;
+
+			if(head==NULL)
+				return head;
 
 			while(head){
 				Node *tq=head->next;
@@ -38,6 +41,8 @@ class Node{
 				tmp=head;
 				head=tq;
 			}
+			if(hd)
+				hd->next=NULL;
 
 			return tmp;
 		}
