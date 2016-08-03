@@ -33,11 +33,9 @@ class Node{
 			Node *trail, *tmp;
 			trail=tmp=head;
 
-			if(tmp){
-				while(tmp->next && tmp->next->next){
-					tmp=tmp->next->next;
-					trail=trail->next;
-				}
+			while(tmp->next && tmp->next->next){
+				tmp=tmp->next->next;
+				trail=trail->next;
 			}
 
 			return trail->data;
