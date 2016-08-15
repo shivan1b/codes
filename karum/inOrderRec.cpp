@@ -18,7 +18,7 @@ class node{
 		node *insertNode(node *root, int d) {
 			if(!root)
 				return new node(d);
-			else if(d <= root->data)
+			if(d <= root->data)
 				root->left=insertNode(root->left,d);
 			else
 				root->right=insertNode(root->right,d);
@@ -28,9 +28,13 @@ class node{
 
 		node *inorder(node *root) {
 			if(root) {
-				inorder(root->left);
+				if(root->left)
+					inorder(root->left);
+				
 				cout<<root->data<<"\n";
-				inorder(root->right);
+				
+				if(root->right)
+					inorder(root->right);
 			}
 		}
 };
