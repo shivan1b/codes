@@ -26,13 +26,8 @@ class Heap{
 		}
 
 		void insert(int e) {
-			if(v.empty()) {
-				v.push_back(e);
-			}
-			else {
-				v.push_back(e);
-				cascade_up();
-			}
+			v.push_back(e);
+			cascade_up();
 		}
 
 		void cascade_down() {
